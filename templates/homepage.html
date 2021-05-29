@@ -5,20 +5,35 @@
  <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
       <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-        <h1 class="title-font font-medium text-5xl text-white">PyTube UI</h1>
-        <p class="leading-relaxed mt-4 text-xl text-white">Download Youtube videos with your specific Resolution easily</div>
+        <h1 class="title-font font-medium text-5xl text-white">YTube Downloads</h1>
+        <p class="leading-relaxed mt-4 text-xl text-gray-400">Download Youtube videos easily. <br><br><br>
+          <h2 class="font-medium text-2xl text-black" ><u>How To Use:</u></h2>
+          <p class="leading-relaxed mt-4 text-sm text-gray-200">
+          1. Copy and paste the link of the Youtube Video <br>
+          2. Enter the resolution to Download <br>
+          3. Click on Download <br>
+          4. Your Download will start. <br>
+          5. Not all resolutions have audio Availiable resolutions will be visible in such cases. <br>
+        </p>
+        </div>
         <form class="lg:w-2/5 md:w-1/2 bg-gray-200 bg-opacity-75 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 shadow-2xl"
         method="POST">
         <h2 class="text-gray-900 text-4xl font-medium title-font mb-5">PyTube UI</h2>
         <input name="link" type='text'
           class="bg-white bg-opacity-75 rounded border border-gray-400 focus:outline-none focus:border-pink-400 text-xl px-4 py-2 mb-4"
           placeholder="Enter Link" required>
-        <input name="res" type="text"
+          <input name="res" type="text"
           class="bg-white bg-opacity-75 rounded border border-gray-400 focus:outline-none focus:border-pink-400 text-xl px-4 py-2 mb-4"
-          placeholder="Enter Resolution" required>
+          placeholder="Enter Resolution" required> 
         <button name="Download" type="submit"
-          class="text-white  border-0 py-2 px-8 bg-gradient-to-r from-teal-400 to-blue-500  focus:outline-none hover:from-pink-500 hover:to-orange-500  rounded text-2xl">Download</button>
-        <br>
+          class="text-white mb-4 border-0 py-2 px-8 bg-gradient-to-r from-teal-400 to-blue-500  focus:outline-none hover:from-pink-500 hover:to-orange-500  rounded text-2xl">Download</button>
+          {% if resolutions %}
+          <h2 class="text-black">Availiable Resolutions :- </h2>
+            {% for r in resolutions%}
+            {{ r }}
+            {% endfor %}
+          {% endif %}
+          <br>
       </div>
     </div>
   </section>
